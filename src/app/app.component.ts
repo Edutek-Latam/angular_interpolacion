@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import data from '../assets/data.json';
+
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,10 @@ import data from '../assets/data.json';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit, OnChanges {
-  title = 'intro02';
-  public nombre : string;
-  public urlImage = 'https://bulma.io/images/placeholders/96x96.png';
-  public dataJson = data;
+  
 
   constructor(){
-    this.nombre = 'Sherwin'
-    console.log(this.nombre)
+    
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);

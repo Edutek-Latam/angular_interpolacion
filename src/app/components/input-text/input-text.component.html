@@ -1,0 +1,18 @@
+<div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="text" placeholder="Juan" 
+      [(ngModel)]="data"  
+      name="nombre" 
+      #name="ngModel" 
+      (ngModelChange)="setValor()"
+      required="">
+
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </p>
+    <p [hidden]="name.valid || name.pristine" > Campo obligatorio </p>
+  </div>

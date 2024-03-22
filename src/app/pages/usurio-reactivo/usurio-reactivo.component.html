@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="columns is-centered mt-5 ">
+        <div class="column is-4">
+            <form [formGroup]="frmUsuario" (ngSubmit)="onSubmit()">
+                <div class="field">
+                    <label class="label">Nomre</label>
+                    <div class="control">
+                      <input formControlName="nombre" class="input" type="text" placeholder="Text input">
+                    </div>
+                    <!-- <p class="help">This is a help text</p> -->
+                  </div>
+                  <div class="field">
+                    <label class="label">Apellido</label>
+                    <div class="control">
+                      <input formControlName="apellido" class="input" type="text" placeholder="Text input">
+                    </div>
+                    <!-- <p class="help">This is a help text</p> -->
+                  </div>
+                  <div class="field">
+                    <label class="label">Correo</label>
+                    <div class="control">
+                      <input formControlName="correo" class="input" type="text" placeholder="Text input">
+                    </div>
+                    <!-- <p class="help">This is a help text</p> -->
+                  </div> 
+                  <div class="field">
+                    <label class="label">Edad</label>
+                    <div class="control">
+                      <input formControlName="edad" class="input" type="number" placeholder="Text input">
+                    </div>
+                    <!-- <p class="help">This is a help text</p> -->
+                  </div>
+                  <div class="field">
+                    <p class="control">
+                      <button  [disabled]="!frmUsuario.valid" type="submit" class="button is-success">
+                        Aceptar
+                      </button>
+                    </p>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>

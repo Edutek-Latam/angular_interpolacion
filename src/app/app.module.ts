@@ -10,6 +10,7 @@ import { UsurioReactivoComponent } from './pages/usurio-reactivo/usurio-reactivo
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextComponent } from './components/input-text/input-text.component';
+import { FormBuilderComponent } from './pages/form-builder/form-builder.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InputTextComponent } from './components/input-text/input-text.component
     UsurioTamplateComponent,
     UsurioReactivoComponent,
     NavbarComponent,
-    InputTextComponent
+    InputTextComponent,
+    FormBuilderComponent
   ],
   imports: [
     BrowserModule,

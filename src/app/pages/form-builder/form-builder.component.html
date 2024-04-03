@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-4">
+            <h3 class="subtitle is-3">Registro de usuario</h3>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <form [formGroup]="frmUser" >
+        <div class="columns is-centered">
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label ml-4">Primer nombre</label>
+                    <div class="conrol">
+                        <input  formControlName="primer_nombre" type="text" class="input is-rounded" placeholder="Sherwin">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label ml-4">Segundo nombre</label>
+                    <div class="conrol">
+                        <input formControlName="segundo_nombre" type="text" class="input is-rounded" placeholder="Sherwin">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label ml-4">Primer apellido</label>
+                    <div class="conrol">
+                        <input formControlName="primer_apellido" type="text" class="input is-rounded" placeholder="Sherwin">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label ml-4">Segundo apellido</label>
+                    <div class="conrol">
+                        <input formControlName="segundo_apellido" type="text" class="input is-rounded" placeholder="Sherwin">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label ml-4">Correo</label>
+                    <div class="conrol">
+                        <input formControlName="correo" type="text" class="input is-rounded" placeholder="Sherwin">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="field">
+                    <label class="label ml-4">Celular</label>
+                    <div class="conrol">
+                        <input formControlName="celular" type="text" class="input is-rounded" placeholder="Sherwin">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns is-centered">
+            <div class="column is-6">
+                <div class="field is-grouped is-grouped-right">
+                    <p class="control">
+                      <button type="submit" (click)="onSubmit()" class="button is-primary">
+                        Submit
+                      </button>
+                    </p>
+                    <p class="control">
+                      <a class="button is-light">
+                        Cancel
+                      </a>
+                    </p>
+                  </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div>
+    {{ frmUser.value | json }}
+</div>

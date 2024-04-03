@@ -7,21 +7,23 @@
                     <div class="control">
                       <input formControlName="nombre" class="input" type="text" placeholder="Text input">
                     </div>
-                    <!-- <p class="help">This is a help text</p> -->
+                    <p *ngIf="frmUsuario.controls['nombre'].getError('required') && frmUsuario.controls['nombre'].touched" class="help is-danger">
+                      El Nombre es oblitagorio</p>
                   </div>
                   <div class="field">
                     <label class="label">Apellido</label>
                     <div class="control">
                       <input formControlName="apellido" class="input" type="text" placeholder="Text input">
                     </div>
-                    <!-- <p class="help">This is a help text</p> -->
+                    <p *ngIf="frmUsuario.controls['apellido'].getError('required') && frmUsuario.controls['apellido'].touched" class="help is-danger">
+                      El Apellido es oblitagorio</p>
                   </div>
                   <div class="field">
                     <label class="label">Correo</label>
                     <div class="control">
                       <input formControlName="correo" class="input" type="text" placeholder="Text input">
                     </div>
-                    <!-- <p class="help">This is a help text</p> -->
+                    <p *ngIf="isValidControl('correo')" class="help">This is a help text</p> 
                   </div> 
                   <div class="field">
                     <label class="label">Edad</label>
@@ -30,11 +32,33 @@
                     </div>
                     <!-- <p class="help">This is a help text</p> -->
                   </div>
-                  <div class="field">
+                 <!--  <div class="field">
                     <p class="control">
-                      <button  [disabled]="!frmUsuario.valid" type="submit" class="button is-success">
+                      <button  [disabled]="!frmUsuario.valid || isSubmited" type="submit" class="button is-success">
                         Aceptar
                       </button>
+                    </p>
+                  </div> -->
+                  <div class="field is-grouped is-grouped-centered">
+                    <p class="control">
+                      <button [disabled]="!frmUsuario.valid || isSubmited" type="submit" class="button is-primary">
+                        Submit
+                      </button>
+                    </p>
+                    <p class="control">
+                      <a class="button is-light" (click)="setValue()">
+                        setValue
+                      </a>
+                    </p>
+                    <p class="control">
+                      <a class="button is-light" (click)="patchValue()">
+                        patchValue
+                      </a>
+                    </p>
+                    <p class="control">
+                      <a class="button is-light" (click)="setValidator()">
+                        validation
+                      </a>
                     </p>
                   </div>
             </form>

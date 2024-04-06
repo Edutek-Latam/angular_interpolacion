@@ -1,5 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
-import data from '../../../assets/data.json';
+import { Router } from '@angular/router';
+import { DataService } from '../../data.service';
+import { IPais } from '../../interfaces/pais.interfaces';
 
 @Component({
   selector: 'app-paises',
@@ -10,12 +12,13 @@ export class PaisesComponent implements OnInit, OnChanges {
   title = 'intro02';
   public nombre : string;
   public urlImage = 'https://bulma.io/images/placeholders/96x96.png';
-  public dataJson = data;
+  public dataJson : IPais[];
 
 
-  constructor(){
+  constructor(private _router: Router, private _dataService: DataService){
     this.nombre = 'Sherwin'
-    console.log(this.nombre)
+    this.dataJson = this._dataService.paises;
+    //console.log(this.nombre)
   }
   ngOnChanges(): void {
     //console.log(changes);
@@ -28,6 +31,10 @@ export class PaisesComponent implements OnInit, OnChanges {
 
   OnClick(evento: any){
     console.log(evento)
+  }
+
+  nuevo(){
+    this._router.navigate(['nuevo_pais',{id:23}])
   }
 
 }

@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { FormBuilderComponent } from './pages/form-builder/form-builder.component';
+import { CrearPaisComponent } from './pages/crear-pais/crear-pais.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormBuilderComponent } from './pages/form-builder/form-builder.componen
     UsurioReactivoComponent,
     NavbarComponent,
     InputTextComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    CrearPaisComponent
   ],
   imports: [
     BrowserModule,

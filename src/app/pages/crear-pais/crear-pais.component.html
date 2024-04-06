@@ -1,0 +1,71 @@
+<div class="section">
+    <div class="columns is-centered">
+        <div class="column is-4">
+            <h2 class="subtitle is-2">Agregar Paises</h2>
+            <div class="column">
+                <div class="control">
+                    <button (click)="addPais()"  class="button is-primary">Nuevo</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+    
+        <form [formGroup]="frmPiases" (ngSubmit)="onSubmit()">
+            <div  formArrayName="paises">
+              <div class="columns" *ngFor="let pais of paises.controls;let i=index" [formGroupName]="i" >
+                <p>Pais:{{i}}</p>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Nombre</label>
+                        <div class="control">
+                          <input formControlName="nombre"  class="input" type="text" placeholder="Text input">
+                        </div>
+                      </div>
+                </div>    
+    
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Capital</label>
+                        <div class="control">
+                          <input formControlName="capital" class="input" type="text" placeholder="Text input">
+                        </div>
+                      </div>
+                </div>    
+    
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Moneda</label>
+                        <div class="control">
+                          <input formControlName="Moneda" class="input" type="text" placeholder="Text input">
+                        </div>
+                      </div>
+                </div>    
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Independencia</label>
+                        <div class="control">
+                          <input formControlName="independencia" class="input" type="text" placeholder="Text input">
+                        </div>
+                      </div>
+                </div>    
+
+                <div class="column">
+                    <div class="control">
+                        <button (click)="removePais(i)" class="button is-primary">Eliminar</button>
+                      </div>
+                </div>
+                
+
+              </div>
+            </div>
+
+            <div class="column">
+                <div class="control">
+                    <button  type="submit"  class="button is-primary">Guardar</button>
+                  </div>
+            </div>
+        </form>
+    
+</div>
+
+{{frmPiases.value | json}}
